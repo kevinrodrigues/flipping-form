@@ -1,0 +1,22 @@
+body {
+	font-family: georgia, arial, sans-serif;
+	font-size: 16px;
+	background: url(/img/bg.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-top: 100px;
+	text-align: center;
+}
+
+.wrapper {
+	max-width: 500px;
+	margin:0 auto;
+	padding:30px;
+	background-color: rgba(24,13,9,0.7);
+}
+
+h1, p {
+	color:#fff;
+}
