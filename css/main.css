@@ -7,11 +7,7 @@ Custom styles start here
 body {
 	font-family: georgia, arial, sans-serif;
 	font-size: 16px;
-	background: url(/img/bg.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background: #ccc; 
 	padding-top: 100px;
 	text-align: center;
 }
@@ -132,14 +128,9 @@ Required styles start here
 	color: hsl(30, 70%, 70%);
 }
 
-/*3D transforms. Each face will be rotated in multiples of -90deg and moved 20px(half of their 40px height) out*/
+
 .flipping-form div:nth-child(1) {-webkit-transform: rotateX(0deg) translateZ(20px);-ms-transform: rotateX(0deg) translateZ(20px);transform: rotateX(0deg) translateZ(20px);}
 .flipping-form div:nth-child(2) {-webkit-transform: rotateX(-90deg) translateZ(20px);-ms-transform: rotateX(-90deg) translateZ(20px);transform: rotateX(-90deg) translateZ(20px);}
-.flipping-form div:nth-child(3) {-webkit-transform: rotateX(-180deg) translateZ(20px);-ms-transform: rotateX(-180deg) translateZ(20px);transform: rotateX(-180deg) translateZ(20px);}
-.flipping-form div:nth-child(4) {-webkit-transform: rotateX(-270deg) translateZ(20px);-ms-transform: rotateX(-270deg) translateZ(20px);transform: rotateX(-270deg) translateZ(20px);}
 
-/*the form will have 4 states/classes(default+3) for rotation*/
 .flipping-form form:hover, 
 .flipping-form form.ready {-webkit-transform: translateZ(-20px) rotateX(90deg);-ms-transform: translateZ(-20px) rotateX(90deg);transform: translateZ(-20px) rotateX(90deg);}
-.flipping-form form.loading {-webkit-transform: translateZ(-20px) rotateX(180deg);-ms-transform: translateZ(-20px) rotateX(180deg);transform: translateZ(-20px) rotateX(180deg);}
-.flipping-form form.complete {-webkit-transform: translateZ(-20px) rotateX(270deg);-ms-transform: translateZ(-20px) rotateX(270deg);transform: translateZ(-20px) rotateX(270deg);}

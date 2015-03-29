@@ -11,7 +11,7 @@ FORM.app = (function() {
 			$form.addClass('ready');
 		});
 
-		// Flip the form back when user removes cursor..
+		// Flip the form back when user removes cursor focus..
 		$email.on('blur', function() {
 			$form.removeClass('ready');
 		});
