@@ -2,7 +2,7 @@
 
 Cool little form which reveals a input field when hovered using 3d animation.
 
-* Demo: [http://kevinrodrigues.github.io/flipping-form/](https://github.com/h5bp/html5-boilerplate)
+* Demo: [Checkout the demo](http://kevinrodrigues.github.io/flipping-form/)
 
 ![Screenshot](/img/screenshot.gif "Screenshot")
 
