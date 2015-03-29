@@ -1,3 +1,9 @@
+/*--------------------------
+
+Custom styles start here
+
+--------------------------*/
+
 body {
 	font-family: georgia, arial, sans-serif;
 	font-size: 16px;
@@ -9,14 +15,131 @@ body {
 	padding-top: 100px;
 	text-align: center;
 }
+h1 {
+	color: #333;
+}
+p {
+	color:#fff;
+	margin: 0;
+}
 
-.wrapper {
+.flipping-form {
 	max-width: 500px;
 	margin:0 auto;
-	padding:30px;
-	background-color: rgba(24,13,9,0.7);
 }
 
-h1, p {
-	color:#fff;
+.flip-text {
+	border: none;
 }
+#email {
+	background: #fff;
+	width: 100%;
+	color: hsl(200, 40%, 30%);
+	padding: 0 10px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.submit-icon {
+	position: absolute;
+	top: 9px;
+	right: 10px;
+	width: 0; 
+	height: 0; 
+	border-bottom: 10px solid transparent;
+	border-top: 10px solid transparent;
+	border-left: 10px solid hsl(200, 40%, 20%);
+	font-size: 0;
+	line-height: 0;
+	/*smooth transitions when user activates input and types something*/
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	/*to make the icons feel like buttons*/
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------
+
+Required styles start here
+
+--------------------------*/
+
+.flipping-form {
+	-webkit-perspective:1000px;
+	perspective:1000px;
+}
+
+.flipping-form form {
+	-webkit-transform: translateZ(-20px);
+	-ms-transform: translateZ(-20px);
+	transform: translateZ(-20px);
+	/*propogate 3d space for children*/
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	/*prevent height collapse as children are absolutely positioned*/
+	height: 40px;
+	/*for smooth animations*/
+	-webkit-transition: all 0.35s;
+	transition: all 0.35s;
+}
+.flipping-form div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.flip-text {
+	line-height: 40px;
+	height:40px;
+	background: hsl(200, 40%, 20%); 
+}
+
+.processing {
+	background:hsl(200, 40%, 30%);
+	-webkit-animation:phase 1s infinite;
+	animation: phase 1s infinite;
+}
+
+@-webkit-keyframes phase {
+	50% {
+		background:hsl(200, 70%, 30%);
+	}
+}
+
+@keyframes phase {
+	50% {
+		background:hsl(200, 70%, 30%);
+	}
+}
+
+#submit {
+	display: none;
+}
+
+.submit-icon.active {
+	color: hsl(30, 70%, 70%);
+}
+
+/*3D transforms. Each face will be rotated in multiples of -90deg and moved 20px(half of their 40px height) out*/
+.flipping-form div:nth-child(1) {-webkit-transform: rotateX(0deg) translateZ(20px);-ms-transform: rotateX(0deg) translateZ(20px);transform: rotateX(0deg) translateZ(20px);}
+.flipping-form div:nth-child(2) {-webkit-transform: rotateX(-90deg) translateZ(20px);-ms-transform: rotateX(-90deg) translateZ(20px);transform: rotateX(-90deg) translateZ(20px);}
+.flipping-form div:nth-child(3) {-webkit-transform: rotateX(-180deg) translateZ(20px);-ms-transform: rotateX(-180deg) translateZ(20px);transform: rotateX(-180deg) translateZ(20px);}
+.flipping-form div:nth-child(4) {-webkit-transform: rotateX(-270deg) translateZ(20px);-ms-transform: rotateX(-270deg) translateZ(20px);transform: rotateX(-270deg) translateZ(20px);}
+
+/*the form will have 4 states/classes(default+3) for rotation*/
+.flipping-form form:hover, 
+.flipping-form form.ready {-webkit-transform: translateZ(-20px) rotateX(90deg);-ms-transform: translateZ(-20px) rotateX(90deg);transform: translateZ(-20px) rotateX(90deg);}
+.flipping-form form.loading {-webkit-transform: translateZ(-20px) rotateX(180deg);-ms-transform: translateZ(-20px) rotateX(180deg);transform: translateZ(-20px) rotateX(180deg);}
+.flipping-form form.complete {-webkit-transform: translateZ(-20px) rotateX(270deg);-ms-transform: translateZ(-20px) rotateX(270deg);transform: translateZ(-20px) rotateX(270deg);}
